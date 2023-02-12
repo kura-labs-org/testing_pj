@@ -13,6 +13,7 @@ pipeline {
           git config user.name ty
           git add .
           git commit -m 'Triggered Build: $BUILD_NUMBER'
+          git remote add git@github.com:kura-labs-org/testing_pj.git 
           git push -u feature stagging
         ''' 
       }
