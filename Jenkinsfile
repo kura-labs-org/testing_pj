@@ -13,7 +13,7 @@ pipeline {
           git config user.name ty
           git add .
           git commit -m 'Triggered Build: $BUILD_NUMBER'
-          git push 
+          git push -u feature stagging
         ''' 
       }
     }
