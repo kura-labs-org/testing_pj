@@ -11,7 +11,7 @@ pipeline {
         sh '''#!/bin/bash
           git config user.email admin@example.com
           git config user.name ty
-          git push stagging HEAD:
+          git push stagging HEAD:git@github.com:kura-labs-org/testing_pj.git
         ''' 
       }
     }
