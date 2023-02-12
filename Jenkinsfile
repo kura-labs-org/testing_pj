@@ -3,21 +3,17 @@ pipeline {
    stages {
     stage ('InputOpt') {
       steps {
-        sh '''#!/bin/bash
-        python3 -m venv test3
-        source test3/bin/activate
-        pip install pip --upgrade
-        pip install -r requirements.txt
-        export FLASK_APP=application
-        flask run &
-        '''
+       input(message: 'Welcome would you like to continue? ', ok: 'continue')
      }
    }
     stage ('GitHub update stagging') {
       steps {
         sh '''#!/bin/bash
-        source test3/bin/activate
-        py.test --verbose --junit-xml test-reports/results.xml
+          git config user.email admin@example.com
+          git config user.name ty
+          git add .
+          git commit -m 'Triggered Build: $BUILD_NUMBER'
+          git push 
         ''' 
       }
     }
